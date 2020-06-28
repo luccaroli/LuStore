@@ -2,7 +2,7 @@
 
 :root {
   --primary-color: #fd951f;
-  --secondary-color: #1fdcfd;
+  --secondary-color: #0989a0;
 }
 
 * {
@@ -56,6 +56,20 @@ body {
 
 .button:hover{
   background-color: #965812;
+}
+
+.button.edit {
+  background-color: var(--secondary-color);
+}
+.button.delete {
+  background-color: lightgray;
+}
+
+.button.edit:hover {
+  background-color: #175470;
+}
+.button.delete:hover {
+  background-color: #b92121;
 }
 
 /* HEADER */
@@ -203,4 +217,17 @@ form .item textarea {
 
 form .fields {
   margin-bottom: 64px;
+}
+
+form .item span {
+  padding: 8px 16px;
+  background-color: var(--primary-color);
+  border-radius: 16px;
+  color: white;
+  margin-right: 4px;
+  margin-top: 8px;
+  display: inline-block;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 12px;
 }
