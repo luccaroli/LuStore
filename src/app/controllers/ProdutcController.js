@@ -46,6 +46,8 @@ module.exports = {
 
       if (!product) return res.send("Product not found!")
 
+
+
       product.old_price = formatPrice(product.old_price)
       product.price = formatPrice(product.price)
 
@@ -67,9 +69,25 @@ module.exports = {
     const keys = Object.keys(req.body)
 
     for(key of keys) {
-      if (req.body[key] == "") {
+      if (req.body[key] == "" && key != "removed_files") {
         return res.send("Please, Fill all Fields!")
       }
+    }
+
+    if (req.files.length != 0) {
+      const newFilesPromise = req.files.map(file => 
+          File.create({...file, product_id: req.body.id})
+        )
+    }
+
+    if (req.body.removed_files) {
+      const removedFiles = req.body.removed_files.split(",")
+      const lastIndex = removedFiles.length - 1
+      removedFiles.splice(lastIndex, 1)
+
+      const removedFilesPromise = removedFiles.map(id => File.delete(id))
+
+      await Promise.all(removedFiles)
     }
 
     req.body.price = req.body.price.replace(/\D/g, "")
