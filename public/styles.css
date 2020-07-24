@@ -340,7 +340,7 @@ form .item #photos-preview img {
   border: 1px solid #efefef;
   border-radius: 4px;
 }
-
+/* Product single gallery */
 .product-single .gallery {
   width: 100%;
 }
@@ -348,6 +348,41 @@ form .item #photos-preview img {
 .product-single .gallery img {
   width: 100%;
 }
+
+.product-single .highlight > img {
+  width: 100%;
+  height: 280px;
+
+  object-fit: none;
+  object-position: 50% 50%;
+  border: 1px solid #efefef;
+
+  cursor: zoom-in;
+
+}
+
+.product-single .gallery-preview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  
+}
+
+.product-single .gallery-preview img {
+  height: 100px;
+  width: 100%;
+
+  object-fit: cover;
+
+  opacity: 0.6;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.product-single .gallery-preview img:hover, 
+.product-single .gallery-preview img.active {
+  opacity: 1;
+}
+
 
 .product-single .info {
   display: grid;
