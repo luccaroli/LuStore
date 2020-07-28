@@ -589,7 +589,7 @@ form .item #photos-preview img {
 /* validate errors */ 
 
 .input .error {
-  background-color: #bb3223;
+  background-color: #e74c3c;
   padding: 4px;
   border-radius: 4px;
   color: white;
