@@ -8,6 +8,7 @@
         name="name"
         placeholder="Digite seu nome completo"
         value="{{ user.name }}"
+        required
         >
     </div>
 </div>
@@ -21,6 +22,8 @@
         name="email"
         placeholder="Digite seu email"
         value="{{ user.email }}"
+        onblur="Validate.apply(this, 'isEmail')"
+
         >
     </div>
 </div>
@@ -62,6 +65,8 @@
         placeholder="Digite seu documento"
         value="{{ user.cpf_cnpj }}"
         onkeydown="Mask.apply(this, 'cpfCnpj')"
+        onblur="Validate.apply(this, 'isCpfCnpj')"
+
         >
     </div>
 </div>
@@ -76,6 +81,8 @@
         placeholder="99999-999"
         value="{{ user.cep }}"
         onkeydown="Mask.apply(this, 'cep')"
+        onblur="Validate.apply(this, 'isCep')"
+
 
         >
     </div>

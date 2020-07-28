@@ -586,10 +586,13 @@ form .item #photos-preview img {
   font-size: 24px;
 }
 
-.form input[name="email"],
-.form input[name="password"],
-.form input[name="passwordRepeat"],
-.form input[name="cpf_cnpj"],
-.form input[name="cep"] {
-  max-width: 60%;
+/* validate errors */ 
+
+.input .error {
+  background-color: #bb3223;
+  padding: 4px;
+  border-radius: 4px;
+  color: white;
+
+  font-family: 'Ubuntu', sans-serif;
 }
