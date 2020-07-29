@@ -34,6 +34,8 @@ async function post(req, res, next) {
        error: "As senhas precisão ser iguais."
      })
    }
+
+  next()
 }
 
 module.exports = {
