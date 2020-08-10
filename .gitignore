@@ -4,3 +4,4 @@ package-lock.json
 .vscode
 public/images
 src/config/db.js
+src/lib/mailer.js
