@@ -37,7 +37,7 @@ module.exports = {
       })  
 
 
-      const filesPromise = req.files.map(file => 
+      const filesPromise = req.files.map(file =>  
         File.create({name: file.filename, path: file.path, product_id}))
       await Promise.all(filesPromise)
 
@@ -92,8 +92,9 @@ module.exports = {
       
       if (req.files.length != 0) {
         const newFilesPromise = req.files.map(file => 
-            File.create({...file, product_id: req.body.id})
+            File.create({name: file.filename, path: file.path, product_id: req.body.id})
           )
+          await Promise.all(newFilesPromise)
       }
 
       if (req.body.removed_files) {
@@ -103,7 +104,7 @@ module.exports = {
 
         const removedFilesPromise = removedFiles.map(id => File.delete(id))
 
-        await Promise.all(removedFiles)
+        await Promise.all(removedFilesPromise)
       }
 
       req.body.price = req.body.price.replace(/\D/g, "")

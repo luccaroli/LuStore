@@ -494,6 +494,14 @@ form .item #photos-preview img {
   text-transform: uppercase;
 }
 
+.product-single .unavailable {
+  font-size: 14px;
+  color: #ccc;
+  font-weight: bold;
+  background: #eee;
+  padding: 8px 16px;
+}
+
 /* PAGE HOME SHOP */
 
 .shop h2 {
@@ -595,4 +603,46 @@ form .item #photos-preview img {
   color: white;
 
   font-family: 'Ubuntu', sans-serif;
+}
+
+.order-success, 
+.order-error {
+  padding: 0;
+  padding-bottom: 112px;
+
+  text-align: center;
+
+  margin: auto;
+}
+
+.order-success .success-lottie,
+.order-error .error-lottie {
+  height: 150px;
+}
+
+.order-success .description-lottie,
+.order-error .description-lottie {
+  margin-bottom: 12px;
+}
+
+.order-success .description-lottie h2,
+.order-error .description-lottie h2 {
+  font-family: 'Ubuntu', sans-serif;
+  margin-bottom: 2px;
+}
+
+
+.order-success a {
+  color: var(--secondary-color);
+}
+.order-success a:hover{
+  font-weight: bold;
+}
+
+.order-error a {
+  color: brown;
+}
+
+.order-error a:hover{
+  font-weight: bold;
 }
