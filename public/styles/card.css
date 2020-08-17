@@ -20,3 +20,37 @@
 
   margin-bottom: 16px;
 }
+
+/* menu */ 
+header div.container {
+  grid-template-columns: 254px auto 342px;
+  grid-gap: 8px;
+}
+
+li.cart a {
+  position: relative;
+}
+
+li.cart a span {
+  background-color: tomato;
+  border-radius: 50%;
+
+  width: 20px;
+  height: 20px;
+
+  font-size: 12px;
+  font-weight: bold;
+
+  position: absolute;
+  top: 16px;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+li.cart a:hover span {
+  background-color: white;
+  color: black;
+}
