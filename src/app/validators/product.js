@@ -23,9 +23,9 @@ async function put(req, res, next) {
       }
     }
 
-    if (!req.files || req.files.length == 0) {
-      return res.send('Envie pelo menos uma imagem!')
-    }
+    // if (!req.files || req.files.length == 0) {
+    //   return res.send('Envie pelo menos uma imagem!')
+    // }
 
   next()
 
