@@ -1,5 +1,4 @@
 node_modules
-*.sql
 package-lock.json
 .vscode
 public/images

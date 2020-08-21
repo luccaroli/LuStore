@@ -111,4 +111,45 @@ module.exports = {
     }
   },
 
+  async update(req, res) {
+    try {
+      const { id, action } = req.params
+
+      const acceptedActions = ['close', 'cancel']
+      if (!acceptedActions.includes(action)) return res.send("Cant't do this action")
+
+
+      // get order
+      const order = await Order.findOne({
+        where: { id }
+      })
+      if (!order) return res.send('Order not found')
+
+      // check if the order is open
+      if (order.status != 'open') return res.send("Cant't do this action") 
+
+      // update order
+      const statuses = {
+        close: "sold",
+        cancel: "canceled"
+      }
+
+      order.status = statuses[action]
+
+      await Order.update(id, {
+        status: order.status
+      })
+
+      // redirect
+      return res.redirect('/orders/sales')
+      
+
+
+
+
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
 }
